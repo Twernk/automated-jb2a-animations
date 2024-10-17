@@ -14,7 +14,7 @@ const PF2E_SIZE_TO_REACH = {
 
 export function systemHooks() {
     Hooks.on("createChatMessage", async (msg) => {
-        if (msg.author.id !== game.user.id) { return };
+        if (msg.owner.id !== game.user.id) { return };
         const playOnDmg = game.settings.get("autoanimations", "playonDamageCore")
         if (msg.flags.pf2e?.context?.type === "damage-taken") {
             // This can be removed if later A-A can differentiate animations on the same item. I guess.
